@@ -35,7 +35,9 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
-
+    <Window.CommandBindings>
+        <CommandBinding x:Name="open0" Command="ApplicationCommands.Open" Executed="open0_Executed"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -50,10 +52,10 @@
                             <ColumnDefinition  Width="50"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel>
-                            <Label Content="{Binding Text2}" FontSize="20"/>
+                            <Label Content="{Binding MainWindowText}" FontSize="20"/>
                         </StackPanel>
                         <UniformGrid Grid.Column="1" Columns="1" Rows="2">
-                            <Button Command="{Binding ViewCommand}">😎</Button>
+                            <Button x:Name="open1" Command="ApplicationCommands.Open" Content="😎"/>
                         </UniformGrid>
                     </Grid>
                 </DataTemplate>

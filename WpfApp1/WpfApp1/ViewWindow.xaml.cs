@@ -19,11 +19,18 @@ namespace WpfApp1
     /// </summary>
     public partial class ViewWindow : Window
     {
+        private ViewWindowviewModel vw = new ViewWindowviewModel();
 
         public ViewWindow()
         {
             InitializeComponent();
-            DataContext = this;
+            DataContext = vw;
         }
+    }
+
+    public class ViewWindowviewModel : ObservableObject
+    {
+        private string vieWindowtext = "test";
+        public string VieWindowtext { get => vieWindowtext; set => Set(ref vieWindowtext, value); }
     }
 }

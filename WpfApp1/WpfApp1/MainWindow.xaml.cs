@@ -28,7 +28,15 @@ namespace WpfApp1
             InitializeComponent();
             DataContext = vm;
         }
-        
+
+        private void open0_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            var viewWindow = new ViewWindow();
+            viewWindow.ShowDialog();
+            
+
+            //viewWindow.ViewTextBox.Text = vm.SelectedText.MainWindowText;
+        }
     }
 
     public class MainWindowviewModel : ObservableObject
@@ -43,24 +51,14 @@ namespace WpfApp1
         {
             Texts.Add(new Text
             {
-                Text2 = "japsojdfpaofj",
+                MainWindowText = "japsojdfpaofj",
             });
-        }
-
-        private RelayCommand viewCommand;
-        public RelayCommand ViewCommand
-        {
-            get => viewCommand ?? (viewCommand = new RelayCommand(
-            param =>
-            {
-            }
-            ));
         }
     }
 
     public class Text : ObservableObject
     {
-        private string text2;
-        public string Text2 { get => text2; set => Set(ref text2, value); }
+        private string mainWindowtext;
+        public string MainWindowText { get => mainWindowtext; set => Set(ref mainWindowtext, value); }
     }
 }

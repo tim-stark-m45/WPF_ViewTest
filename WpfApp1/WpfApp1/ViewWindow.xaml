@@ -41,6 +41,6 @@
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label Content="{Binding SelectedText.Text2}"></Label>
+        <TextBox Name="ViewTextBox" Text="{Binding VieWindowtext}"></TextBox>
     </Grid>
 </Window>
