@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace WpfApp1
 
     public class ViewWindowviewModel : ObservableObject
     {
-        private string vieWindowtext = "test";
-        public string VieWindowtext { get => vieWindowtext; set => Set(ref vieWindowtext, value); }
+        //private string viewWindowtext = "test";
+        //public string ViewWindowtext { get => viewWindowtext; set => Set(ref viewWindowtext, value); }
     }
 }

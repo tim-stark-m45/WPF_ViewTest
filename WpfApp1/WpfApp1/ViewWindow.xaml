@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="ViewWindow" Height="450" Width="300" WindowStartupLocation="CenterScreen">
+        Title="ViewWindow" Height="450" Width="300" WindowStartupLocation="CenterScreen" Name="Main">
     <Window.Resources>
         <ControlTemplate x:Key="btnTemplate" TargetType="Button">
             <Border
@@ -41,6 +41,6 @@
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TextBox Name="ViewTextBox" Text="{Binding VieWindowtext}"></TextBox>
+        <TextBox Name="ViewTextBox" Text="{Binding SelectedText.MainWindowText, ElementName=Main, UpdateSourceTrigger=PropertyChanged}"></TextBox>
     </Grid>
 </Window>

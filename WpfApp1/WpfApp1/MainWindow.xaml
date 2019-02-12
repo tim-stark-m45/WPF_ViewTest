@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="300" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="450" Width="300" WindowStartupLocation="CenterScreen" Name="Main">
     <Window.Resources>
         <ControlTemplate x:Key="btnTemplate" TargetType="Button">
             <Border
@@ -35,9 +35,9 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
-    <Window.CommandBindings>
+    <!--<Window.CommandBindings>
         <CommandBinding x:Name="open0" Command="ApplicationCommands.Open" Executed="open0_Executed"/>
-    </Window.CommandBindings>
+    </Window.CommandBindings>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -55,7 +55,8 @@
                             <Label Content="{Binding MainWindowText}" FontSize="20"/>
                         </StackPanel>
                         <UniformGrid Grid.Column="1" Columns="1" Rows="2">
-                            <Button x:Name="open1" Command="ApplicationCommands.Open" Content="😎"/>
+                            <Button Command="{Binding DataContext.ViewButtonCommand, ElementName = Main}"   Content="😎"/>
+                            <!--<Button x:Name="open1" Command="ApplicationCommands.Open" Content="😎"/>-->
                         </UniformGrid>
                     </Grid>
                 </DataTemplate>

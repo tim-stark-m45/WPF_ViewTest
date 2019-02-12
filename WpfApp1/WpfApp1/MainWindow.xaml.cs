@@ -21,44 +21,55 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowviewModel vm = new MainWindowviewModel();
+        //private MainWindowViewModel vm = new MainWindowViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = vm;
+            DataContext = new MainWindowViewModel();
         }
 
-        private void open0_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            var viewWindow = new ViewWindow();
-            viewWindow.ShowDialog();
+        //private void open0_Executed(object sender, ExecutedRoutedEventArgs e)
+        //{
+        //    var viewWindow = new ViewWindow();
+        //    viewWindow.ShowDialog();
             
 
-            //viewWindow.ViewTextBox.Text = vm.SelectedText.MainWindowText;
-        }
+        //    //viewWindow.ViewTextBox.Text = vm.SelectedText.MainWindowText;
+        //}
     }
 
-    public class MainWindowviewModel : ObservableObject
-    {
-        private ObservableCollection<Text> texts = new ObservableCollection<Text>();
-        public ObservableCollection<Text> Texts { get => texts; set => Set(ref texts, value); }
+    //public class MainWindowViewModel : ObservableObject
+    //{
+    //    private ObservableCollection<Text> texts = new ObservableCollection<Text>();
+    //    public ObservableCollection<Text> Texts { get => texts; set => Set(ref texts, value); }
 
-        private Text selectedText;
-        public Text SelectedText { get => selectedText; set => Set(ref selectedText, value); }
+    //    private Text selectedText;
+    //    public Text SelectedText { get => selectedText; set => Set(ref selectedText, value); }
 
-        public MainWindowviewModel()
-        {
-            Texts.Add(new Text
-            {
-                MainWindowText = "japsojdfpaofj",
-            });
-        }
-    }
+    //    public MainWindowViewModel()
+    //    {
+    //        Texts.Add(new Text
+    //        {
+    //            MainWindowText = "japsojdfpaofj",
+    //        });
+    //    }
 
-    public class Text : ObservableObject
-    {
-        private string mainWindowtext;
-        public string MainWindowText { get => mainWindowtext; set => Set(ref mainWindowtext, value); }
-    }
+    //    private RelayCommand viewButtonCommand;
+    //    public RelayCommand ViewButtonCommand
+    //    {
+    //        get => viewButtonCommand ?? (viewButtonCommand = new RelayCommand(
+    //        param =>
+    //        {
+    //            MessageBox.Show(SelectedText.MainWindowText);
+    //        }
+    //        ));
+    //    }
+    //}
+
+    //public class Text : ObservableObject
+    //{
+    //    private string mainWindowtext;
+    //    public string MainWindowText { get => mainWindowtext; set => Set(ref mainWindowtext, value); }
+    //}
 }
